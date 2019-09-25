@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 )
 
 func isAnagram(a, b string) bool {
@@ -35,10 +36,5 @@ func isAnagram(a, b string) bool {
 }
 
 func main() {
-	fmt.Println(isAnagram("asd", "das"))
-	fmt.Println(isAnagram("qwert", "qwerty"))
-	fmt.Println(isAnagram("qwe", "qwe"))
-	fmt.Println(isAnagram("ahgf", "afgh"))
-	fmt.Println(isAnagram("poiuy", "yuiop"))
-	fmt.Println(isAnagram("qwedas", "cxz"))
+	fmt.Println(isAnagram(os.Args[1], os.Args[2]))
 }
