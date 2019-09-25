@@ -1,7 +1,9 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
 )
 
 func isAnagram(a, b string) bool {
@@ -35,10 +37,12 @@ func isAnagram(a, b string) bool {
 }
 
 func main() {
-	fmt.Println(isAnagram("asd", "das"))
-	fmt.Println(isAnagram("qwert", "qwerty"))
-	fmt.Println(isAnagram("qwe", "qwe"))
-	fmt.Println(isAnagram("ahgf", "afgh"))
-	fmt.Println(isAnagram("poiuy", "yuiop"))
-	fmt.Println(isAnagram("qwedas", "cxz"))
+	input1 := bufio.NewScanner(os.Stdin)
+	input2 := bufio.NewScanner(os.Stdin)
+	fmt.Println("Unesite prvu rec: ")
+	input1.Scan()
+	fmt.Println("Unesite drugu rec: ")
+	input2.Scan()
+
+	fmt.Println(isAnagram(input1.Text(), input2.Text()))
 }
